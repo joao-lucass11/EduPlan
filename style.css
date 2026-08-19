@@ -1,0 +1,48 @@
+/* Importando fonte */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+/* Variáveis de CSS */
+/* Aqui a gente guarda as cores do site em um só lugar.
+Vantagem: se quiser trocar uma cor, muda sóaqui e ela é atualizada
+em todos os lugares que a usam */
+
+:root{
+    --azul-escuro:#1D4ED8;
+    --azul: #2563EB;
+    --verde: #16A34A;
+    --verde-escuro: #15803D;
+    --texto-principal: #0F172A;
+    --texto-secundario: #475569;
+    --cor-borda: #E5E7EB;
+    --cor-de-fundo: #FFFFFF;
+
+
+}
+*{
+box-sizing: border-box;
+margin: 0%;
+padding:0;
+
+}
+body{
+font-family: "Inter", sans-serif;
+color: var(--texto-principal);
+
+}
+.header{
+    position:sticky; /*Faz o cabeçalho "grudar no topo da tela"*/
+    top: 0;
+    z-index: 100; /*ORDEM DE EMPILHAMENTO(CAMADAS)*/
+    background-color: var(--cor-de-fundo);
+    border-bottom: 1px solid var(--cor-borda);
+
+}
+
+.header-inner{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
