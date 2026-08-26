@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 /* Variáveis de CSS */
 /* Aqui a gente guarda as cores do site em um só lugar.
-Vantagem: se quiser trocar uma cor, muda sóaqui e ela é atualizada
+Vantagem: se quiser trocar uma cor, muda só aqui e ela é atualizada
 em todos os lugares que a usam */
 
 :root{
@@ -12,37 +12,158 @@ em todos os lugares que a usam */
     --verde-escuro: #15803D;
     --texto-principal: #0F172A;
     --texto-secundario: #475569;
-    --cor-borda: #E5E7EB;
-    --cor-de-fundo: #FFFFFF;
+    --cor-borda: #e1e4e2;
+    --cor-de-fundo: #f8f8f7;
 
 
 }
+
+/* O "*" seleciona TODOS os elementos da página */
 *{
-box-sizing: border-box;
-margin: 0%;
+box-sizing: border-box;  /*Faz o padding e a borda ficarem dentro do tamanho do
+ que a gente define para o elemento, e não somados a ele*/
+ /* Reseta o espaçamento padrão do navegador */
+margin: 0;
 padding:0;
 
 }
 body{
 font-family: "Inter", sans-serif;
-color: var(--texto-principal);
+color: var(--texto-principal);/*Cor da fonte*/
 
 }
 .header{
     position:sticky; /*Faz o cabeçalho "grudar no topo da tela"*/
     top: 0;
     z-index: 100; /*ORDEM DE EMPILHAMENTO(CAMADAS)*/
-    background-color: var(--cor-de-fundo);
-    border-bottom: 1px solid var(--cor-borda);
+    background-color: var(--cor-de-fundo); /*Cor de fundo*/
+    border-bottom: 1px solid var(--cor-borda); /*Borda inferior*/
 
 }
 
 .header-inner{
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 24px;
+    max-width: 1200px;/*Máximo permitido*/
+    margin: 0 auto;/*Margem 0 em cima/baixo e auto nas laterais*/
+    padding: 0 24px;/*Espaçamento interno: 0 em cima/baixo e 24px nas laterais*/
+
+    /* APLICAÇÃO DO FLEXBOX */
+    display: flex;/*Transform essa div em um "container flexivel". Isso é o que permite colocar
+    logo, menu e botões um do lado do outro*/
+
+    align-items: center;/*Alinha os itens no CENTRO verticalmente dentro do header*/
+
+    justify-content: space-between; /*Distribui os itens: o primeiro cola na esquerda,
+     o último cola na direita, e sobra espaço entre eles*/
+    gap: 24px;/*Espaço mínimo entre o itens (logo, menu e botões)*/
+}
+
+            /*LOGO*/
+.logo{
+display: flex;
+align-items: center;
+gap: 8px;
+font-size: 20px; /*Tamanho da fonte*/
+font-weight: 800;
+color: var(--texto-principal);
+text-decoration: none; /*Essa linha remove o sublinhado que o
+navegador coloca em links por padrão*/
+
+}
+
+.logo img {
+    width: 60px;/*Define a largura da imagem da logo.*/
+
+}
+
+.nav{
+    display: flex;
+    align-items:center;
+    gap: 32px;
+    list-style: none;/*O menu é uma lista não ordenada(ul), e
+    por padrão listas mostram bolinhas antes de cada item. Essa propriedade remove
+    as bolinhas*/
+
+    /*Zera espaçamentos padrão que o naegador aplica em listas*/
+    margin: 0;
+    padding: 0;
+}
+
+.nav a {
+    text-decoration: none;
+    color: var(--texto-secundario);
+    font-size:15px;
+    font-weight: 500;
+    padding: 6px 0; /*Um respiro em cima e em baixo do texto do link, facilitando o clique*/
+    transition: color .2s ease; /*Diz ao mavegador: quando a cor mudar (por exemplo no hover), faça
+    essa mudança suave, em 0,2 segundo, em vez de trocar a cor de forma brusca*/
+    white-space: nowrap; /*Impede que o texto do link quebre em duas linhas 
+    caso o espaço fique apertado*/
+}
+
+/* :hover é aplicado quando o mouse passa por cima do link */
+.nav a:hover{
+    color: var(--texto-principal);
+}
+
+/* Botões (Entrar / Cadastrar */
+
+.actions{
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 24px;
+    gap: 12px;
 }
+
+/* Estilo BASE, compartilhado pelos dois botões */
+.btn{
+    font-family: inherit;
+    font-size:14px;
+    font-weight: 600;
+    border-radius: 8px; /*Arredonda os cantos do botão*/
+    padding:10px 18px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    text-decoration: none;
+
+    /*Centralizam o texto do botão, tanto na horizontal quanto na vertical*/
+    display:inline-flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.btn-entrar{
+    background-color: var(--cor-de-fundo);
+    color: var(--texto-principal);
+    border-color: var(--verde);
+}
+
+.btn-entrar:hover{
+    border-color: var(--texto-principal);
+}
+.btn-cadastrar{
+    background-color: var(--azul-escuro);
+    color:#f2f8f4
+}
+.btn-cadastrar:hover{
+    border-color: var(--texto-principal);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
