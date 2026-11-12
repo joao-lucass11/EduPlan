@@ -14,8 +14,8 @@ Vantagem: se quiser trocar uma cor, muda só aqui e ela é atualizada em todos o
     --cor-borda: #E5E7EB;
     --cor-fundo: #FFFFFF;
 
-    /* NOVAS VARIÁVEIS*/
-    --azul-marinho: #0b1e4f;
+    /* NOVAS Variáveis */
+    --azul-marinho: #0B1E4F;
     --azul-hover: #1E40AF;
     --azul-claro: #DBEAFE;
     --fundo-suave: #F5F8FF;
@@ -211,106 +211,241 @@ body {
 }
 
 /* HERO */
-/* Icones do Google: Deixamos o tamanho padrão menor e alinhado ao texto */
-.material-symbols-outlined{
+
+/* Icones do Google: Deixamos o tamanho padrão menor e alinhado 
+ao texto */
+.material-symbols-outlined {
     font-size: 20px;
     line-height: 1;
     display: inline-block;
-    width: 1 em;
+    width: 1em;
     overflow: hidden;
     white-space: nowrap;
-    flex-shrink: 0; /*O ícone nunca encolhe dentro de um flex*/
+    flex-shrink: 0; /* O ícone nunca encolhe dentro de um flex */
 }
 
-.hero{
+.hero {
     background-color: var(--fundo-suave);
-    padding: 64px 0 80px; 
+    padding: 64px 0 80px; /* 64px em cima, 0 nas laterais, 80px embaixo*/
     border-bottom: 1px solid var(--cor-borda);
 }
 
-/* Aqui usamos o GRID, irmão do flexbox, o GRID organiza em colunas e linhas */
-
-.hero-inner{
+/* Aqui usaremos o GRID, "irmão" do Flexbox
+-> Flexbox organiza em UMA direção; Grid organiza em colunas E linhas 
+*/
+.hero-inner {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 24px;
 
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); /* Duas colunas de tamanho igual */
-    align-items: center; /* Alinha o conteúdo das colunas verticalmente */
+    /* "fr" = fração do espaço disponivel */
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+    align-items: center;
     gap: 48px;
 }
 
-.hero-etiqueta{
+/* Coluna da Esquerda */
+
+.hero-etiqueta {
     display: inline-block;
-    background-color: var(--azul-escuro);
+    background-color: var(--azul-claro);
+    color: var(--azul-escuro);
     font-size: 12px;
     font-weight: 600;
-    text-transform: uppercase; /*Deixa o texto em maiúsculas*/
-    letter-spacing: 0.5px; /*Espaçamento entre letras*/
+    text-transform: uppercase; /* Deixa o texto em MAIÚSCULAS */
+    letter-spacing: 0.5px; /* Um pouco de espaço entre as letras */
     padding: 6px 12px;
     border-radius: 6px;
     margin-bottom: 20px;
 }
 
-.hero-titulo{
+.hero-titulo {
     color: var(--azul-marinho);
     font-size: 54px;
     font-weight: 800;
-    line-height: 1.2;
+    line-height: 1.05;
     text-transform: uppercase;
     margin-bottom: 20px;
 }
 
-.hero-titulo span{
+.hero-titulo span {
     color: var(--azul-escuro);
-    display:block;
+    display: block;
 }
 
-.hero-descricao{
-    color: var(--texto-secundario);
+.hero-descricao {
     font-size: 18px;
-    line-height: 1.6;
+    line-height: 1.5;
+    color: var(--texto-secundario);
+    max-width: 440px; /* Impede que a linha fique muito comprida*/
     margin-bottom: 32px;
-    max-width: 440px;
-
 }
-.hero-botoes{
+
+.hero-botoes {
     display: flex;
     gap: 12px;
-    margin-top: 24px;
-    flex-wrap: wrap; /* Faz os botões quebrarem de linha caso o espaço fique apertado */
+    flex-wrap: wrap; /* Se não couber, o segundo botão desce p/ baixo */
+    margin-bottom: 32px;
 }
 
 /* Versão maior do botão */
 
 .btn-grande {
-    padding: 12px 24px;
-    font-size: 16px;
+    font-size: 15px;
+    padding: 14px 28px;
     text-transform: uppercase;
-    gap: 12px;
+    gap: 8px;
 }
 
 .btn-primario {
     background-color: var(--azul-escuro);
     color: #FFF;
-    transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 .btn-primario:hover {
     background-color: var(--azul-hover);
-    transform: translateY(-2px);
-    transition: background-color 0.2s ease, transform 0.2s ease;
 }
-
 
 .btn-contorno {
-    background-color: var(--cor-de-fundo);
+    background-color: var(--cor-fundo);
     color: var(--azul-escuro);
-    border: 2px solid var(--azul-escuro);
+    border: 1.5px solid var(--azul-escuro);
 }
+
 .btn-contorno:hover {
-    background-color: var(--azul-escuro);
-    color: #FFF;
-    transform: translateY(-2px);
+    background-color: var(--azul-claro);
+}
+
+/* Faixa com as 3 vantagens */
+
+.hero-vantagens {
+    list-style: none;
+    display: flex;
+    background-color: var(--cor-fundo);
+    border: 1px solid var(--cor-borda);
+    border-radius: 10px;
+    padding: 14px 0;
+    max-width: 460px;
+}
+
+.hero-vantagens li {
+    flex: 1; /* Os 3 itens dividem a largura igualmente*/
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 14px;
+    font-size: 12px;
+    line-height: 1.4;
+    color: var(--texto-secundario);
+}
+
+/* Linha divisória entre os itens 
+"li + li" = todo <li> que vem DEPOIS de outro <li> (ou seja, o 2º e o 3º)
+*/
+.hero-vantagens li + li {
+    border-left: 1px solid var(--cor-borda);
+}
+
+.hero-vantagens .material-symbols-outlined {
+    color: var(--azul-escuro);
+    font-size: 26px;
+}
+
+.hero-vantagens strong {
+    display: block;
+    color: var(--texto-principal);
+    font-weight: 600;
+}
+
+/* Coluna da direita: Imagem do Dashboard */
+
+.hero-imagem {
+    width: 100%;
+    height: auto;
+    display: block;
+    background-color: var(--cor-fundo);
+    border: 2px solid var(--texto-principal);
+    border-radius: 14px;
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+}
+
+/* FUNCIONALIDADES (RECURSOS) */
+/* Faz a página deslizar suavemente até a seção correspondente */
+html {
+    scroll-behavior: smooth;
+}
+
+section {
+    scroll-margin-top: 90px;
+}
+
+.secao{
+    padding: 64px 0;
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.secao-titulo{
+    font-size: 32px;
+    font-weight: 800px;
+    color: var(--azul-marinho);
+    margin-bottom: 32px;
+    text-transform: uppercase;
+    text-align: center;
+    
+}
+
+.secao-titulo::after{
+    content: "";
+    display: block;
+    width: 64px;
+    height: 4px;
+    background-color: var(--azul-marinho);
+    margin: 16px auto 0;
+    border-radius: 2px;
+}
+
+.cards{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr );
+    gap: 24px;
+}
+
+.card{
+    background-color: var(--cor-fundo);
+    border: 1px solid var(--cor-borda);
+    border-radius: 30px;
+    padding: 24px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(15, 23, 42, 0.1);
+    transition: transform 0.2s;
+}
+
+.card:hover{
+    transform: translateY(-4px);
+}
+
+.card-icone{
+    font-size: 40px;
+    color: var(--azul-escuro);
+    margin-bottom: 16px;
+}
+
+.card h3{
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--azul-marinho);
+    margin-bottom: 8px;
+}
+
+.card p{
+    font-size: 14px;
+    color: var(--texto-secundario);
+    line-height: 1.5;
 }

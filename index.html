@@ -29,7 +29,7 @@
 
             <ul class="nav" id="nav">
                 <li><a href="#">Inicio</a></li>
-                <li><a href="#">Recursos</a></li>
+                <li><a href="#funcionalidades">Recursos</a></li>
                 <li><a href="#">Beneficios</a></li>
                 <li><a href="#">Sobre</a></li>
                 <li><a href="#">Depoimentos</a></li>
@@ -62,54 +62,94 @@
             <div class="hero-inner">
 
                 <!-- COLUNA DA ESQUERDA: textos e botões -->
-                 <div class="hero-texto">
+                <div class="hero-texto">
                     <span class="hero-etiqueta">Plataforma para Professores</span>
-                 </div>
+                
+                    <!-- O texto está escrito normal. Quem deixa em MAIÚSCULAS é o CSS (text-transform)
+                    O <span> permite pintar só a palavra "inteligente" de azul -->
+                    <h1 class="hero-titulo">
+                        Planejamento pedagógico <span>inteligente</span>
+                    </h1>
 
-                 <!-- O texto está escrito normal. Quem deixa em MAIÚSCULAS é o CSS (text-transform)
-                  O <span> permite pintar só a palavra "inteligente" de azul -->
-                 <h1 class="hero-titulo">
-                    Planejamento pedagógico <span>inteligente</span>
-                 </h1>
-
-                 <p class="hero-descricao">
+                    <p class="hero-descricao">
                     Organize planos de aula, acompanhe turmas e centralize sua rotina acadêmica em um
                     só lugar.
-                 </p>
+                    </p>
 
-                 <div class="hero-botoes">
-                    <a href="#" class="btn btn-primario btn-grande">Começar agora</a>
-                    <a href="#" class="btn btn-contorno btn-grande">
-                        <span class="material-symbols-outlined">play_arrow</span>
-                        Ver Recursos
-                    </a>
-                 </div>
+                    <div class="hero-botoes">
+                        <a href="#" class="btn btn-primario btn-grande">Começar agora</a>
+                        <a href="#" class="btn btn-contorno btn-grande">
+                            <span class="material-symbols-outlined">play_arrow</span>
+                            Ver Recursos
+                        </a>
+                    </div>
 
-                 <!-- Faixa com as 3 vantagens -->
-                 <ul class="hero-vantagens">
-                    <li>
-                        <span class="material-symbols-outlined">verified_user</span>
-                        <p><strong>Seguro</strong> Seus dados protegidos</p>
-                    </li>
+                    <!-- Faixa com as 3 vantagens -->
+                    <ul class="hero-vantagens">
+                        <li>
+                            <span class="material-symbols-outlined">verified_user</span>
+                            <p><strong>Seguro</strong> Seus dados protegidos</p>
+                        </li>
 
-                    <li>
-                        <span class="material-symbols-outlined">cloud</span>
-                        <p>Acesso em qualquer lugar</p>
-                    </li>
+                        <li>
+                            <span class="material-symbols-outlined">cloud</span>
+                            <p>Acesso em qualquer lugar</p>
+                        </li>
 
-                    <li>
-                        <span class="material-symbols-outlined">schedule</span>
-                        <p>Economize tempo</p>
-                    </li>
-                 </ul>
+                        <li>
+                            <span class="material-symbols-outlined">schedule</span>
+                            <p>Economize tempo</p>
+                        </li>
+                    </ul>
+                </div>
+                
+                <img 
+                    src="./assets/dashboard.png" 
+                    alt="Tela do Dashboard do Eduplan"
+                    class="hero-imagem"
+                >
             </div>
 
-            <img 
-                src="./assets/dashboard.png" 
-                alt="Tela do Dashboard do Eduplan"
-                class="hero-imagem"
-            >
+            
         </section>
+        <!-- FUNCIONLIDADES (RECURSOS) -->
+         <!-- Cada cartão é um Requisito fundamental (RF) da documentação do projeto-->
+         <section class="secao" id="funcionalidades">
+             <div class="container">
+                <h2 class="secao-titulo">Funcionalidades</h2>
+                <div class="card">
+                    <article class="card">
+                        <span class="material-symbols-outlined card-icone">description</span>
+                        <h3>Planejamento de Aulas</h3>
+                        <p>Crie e organize planos de aula de forma eficiente, com recursos interativos e personalizáveis.</p>
+                    </article>
+
+                    <article class="card">
+                        <span class="material-symbols-outlined card-icone">calendar_month</span>
+                        <h3>Calendário Acadêmico</h3>
+                        <p>Monitore o desempenho dos alunos e personalize o ensino de acordo com as necessidades de cada um.</p>
+                    </article>
+
+                    <article class="card">
+                        <span class="material-symbols-outlined card-icone">groups</span>
+                        <h3>Diário de Classe</h3>
+                        <p>Registre a presença dos alunos, anote observações e mantenha um histórico completo de cada turma.</p>
+                    </article>
+
+                    <article class="card">
+                        <span class="material-symbols-outlined card-icone">folder_open</span>
+                        <h3>Banco de atividades</h3>
+                        <p>Armazene e compartilhe atividades, exercícios e materiais de apoio para suas aulas.</p>
+                    </article>
+
+                    <article class="card">
+                        <span class="material-symbols-outlined card-icone">track-changes</span>
+                        <h3>Integração BNCC</h3>
+                        <p>Busque competências da BNCC e as vincule às atividades de forma simples e rápida.</p>
+                    </article>
+
+             </div>
+         </section>
     </main>
 
     <script src="script.js"></script>
